@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Rapid Test Prototype</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1 class="site-title">Rapid Test Prototype</h1>
+    <nav class="site-nav" aria-label="Primary">
+      <button data-link="home" class="nav-button" id="nav-home">Home</button>
+      <button data-link="blog" class="nav-button" id="nav-blog">Blog</button>
+      <button data-link="test" class="nav-button" id="nav-test">Self Test</button>
+      <button id="theme-toggle" aria-pressed="false">Toggle Dark</button>
+    </nav>
+  </header>
+
+  <main id="app-root">
+    <section id="page-home" class="page" role="region" aria-labelledby="home-title">
+      <h2 id="home-title">Big Text Display</h2>
+      <label for="big-text-input" class="sr-only">Enter text to display</label>
+      <input id="big-text-input" type="text" placeholder="Type something..." aria-describedby="text-controls" />
+
+      <div id="text-controls" class="controls">
+        <label>Color: <input id="text-color" type="color" value="#ff4d4d"></label>
+        <label>Size: <input id="text-size" type="range" min="24" max="160" value="72"></label>
+        <button id="clear-text">Clear</button>
+      </div>
+
+      <div id="big-text-display" class="big-text" tabindex="0" aria-live="polite"></div>
+    </section>
+
+    <section id="page-blog" class="page hidden" role="region" aria-labelledby="blog-title">
+      <h2 id="blog-title">Sample Blog</h2>
+      <article class="post">
+        <h3 id="post-title">The Joy of Prototyping</h3>
+        <time id="post-time">2025-09-28</time>
+        <p id="post-body">Small experiments let you learn fast. Try ideas, measure, and iterate.</p>
+      </article>
+
+      <section id="comments" aria-labelledby="comments-title">
+        <h3 id="comments-title">Comments</h3>
+        <ul id="comments-list" class="comments-list" aria-live="polite"></ul>
+        <form id="comment-form">
+          <label for="comment-input" class="sr-only">Add comment</label>
+          <textarea id="comment-input" rows="3" placeholder="Add an anonymous comment..."></textarea>
+          <div class="comment-actions">
+            <button type="submit">Add Comment</button>
+            <button type="button" id="clear-comments">Clear Comments</button>
+          </div>
+        </form>
+      </section>
+    </section>
+
+    <section id="page-test" class="page hidden" role="region" aria-labelledby="test-title">
+      <h2 id="test-title">Self Test Harness</h2>
+      <p>Use the buttons to exercise core flows.</p>
+      <div class="tests">
+        <button id="test-fill-text">Test: Fill Big Text</button>
+        <button id="test-add-comment">Test: Add Comment</button>
+        <pre id="test-log" class="test-log" aria-live="polite"></pre>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>Prototype — vanilla JS · localStorage persistence</small>
+  </footer>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>

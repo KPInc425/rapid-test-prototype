@@ -1,0 +1,135 @@
+# Language & Tools
+- Vanilla **JavaScript ES6+** only (no frameworks).
+- **HTML5 Canvas 2D** API for rendering.
+- **No external dependencies** required for MVP.
+-- **DO** break into small files as building
+
+# StraightLine PMM definition and rules
+Here are the rules, can you help me test these ideas and this framework, I will tell you the idea of what we are building in the agent chat window.
+
+## The new backlog
+StraightLine is as it sounds, a much straighter line from the businesses need to discuss, decompose and prioritize the work separated from the delivery teams desire to engineer a solution and deliver the work at a partnership agreed level of quality, and now, with this excellent third party at the table in the form of AI, AI coding assistants that all need to now be seated at the same table.
+
+Before now, engineering was such a slow and risky process that we built entire organizations and enormous markets full of produt offerings around managing and improving that risk.  Now, engineering is no longer slow and thus and entirely new system emerges.  However, since its hard to retrain the world and most people don't like big-changes too-fast, so mapping to familiar concepts on our walk to a future of something very different has utility.
+
+## The Rules of a StraightLine backlog
+
+### StraightLine AreaPath & Ability Statements - From the businesses perspective there are only 2 types of artifacts.  
+- AreaPaths operate much like directories with parent child sub directories
+- AreaPaths provide a decomposable category for the Ability statements
+- Ability statements all start with keyword "ability"
+- Ability statements are short outcome focused statements
+- Ability statements are decomposed (using AreaPaths) into valuable interesting pieces until they are all about the same size.  A delivery team of 3-5 individuals could accomplish the work fully from idea to production, fully, attending to the correct level of focus on -ilities which means config as code, infrastructure as code, containerization, devops, scanning, automated testing at multiple levels, data update scripts, feature flags, on and on and on sometimes needing to tend to 100 little things to solve for each Ability statement, but the team can get each done in 1-3 days.
+    + the business only sees and helps to decompose (areapath), categorize (areapath), decompose (ability statements) for the purpose of prioritization and vision sharing, inventory of ideas, articulated as ability statements of future outcomes we want
+    + tries to make ordering software as easy as ordering pizza, answer few questions, let the team worry about all the little parts and variety of planning, purchasing, inventory, ordering, cleaning, preping, scheduling, and finally that pizza you got built and delivered to your table in about 15 minutes.
+
+### StraightLine Additional Details - From the delivery teams perspective there is 1 additional type of artifact
++ Additional Details are absolutely everything else that has or might be attached to a given ability statement that further describes, explains, or any other qualities.
++ Additional Details "describe" something about the ability statement or else it is its own ability statement with its own details
++ Most planning and creative views of the StraightLine backlog do not show any additional details information
+
+### The strict .md document format for StraightLine
+- Header tags are used to represent AreaPath and may decompose as far as needed, the stay left justified
+- A "-" (dash) character list item is used to represent ability statements, they stay left justified
+    + The "ability" statements may be attached to any AreaPath but you will find the majority are at or very near the leaf-nodes
+- A tab indent and "+" (plus) character list item is used to represent "additional details" that are generally attached to ability statements but can be attached to AreaPaths though this is less common
+- All data noise and input information from various sources can be pressed down into one of these 3 artifacts
+```
+Example format and purpose of StraightLine .md based backlog replacement:
+# Name of Product/project/build
+
+## AreaPath near root like this it will be a large organized section of the inventory of the overall build
+
+### Sub AreaPath as we move into the middle of the AreaPaths inventory language gives way to provide lineage and decompositionally relatable abilities categorical grouping
+- ability to do something
+    + additional details about this ability
+    + additional details about this ability
+
+#### Sub Sub AreaPath to break an ability that is too big into smaller valuable pieces
+- ability to do something that solves a smaller part
+    + additional details about this ability    
+- ability to do something that solves a smaller part
+- ability to do something that solves a smaller part
+    + additional details about this ability
+
+## Best Practices when writing AreaPath and Ability Statements for StraightLine PMM Backlog
++ always keep the AreaPath and Ability Statements short and very human/business friendly, avoid lots of technical jargon.
++ move all the technical jargon and other language that fits out to the -ilities document where we deal with big cross cutting concerns that generally only need discussed seldom and stand in great as most of a "Definition of Done" the business and delivery team can own together.  The next place technical jargon and really anything that "describes" the original Ability Statement topic further becomes part of the additional information.  
++ the business rarely if ever looks down at additional information, they need the clear language and organizational structure offered by the AreaPath and Ability Statements.
+
+
+## Best Practices
+- Think about the users input and consider if you want to ask questions, gain clarification, answer a question they might be asking, or go ahead and make some updates to the current backlog-abilities.md or backlog-ilities.md based on the information.
+- If you are going to make updates always start in the chat window until fully ready to update the very important and slow to change backlog documents there are many steps.
+  Rule) No generics, no fluff, no making things up, we actually want these backlog files to stay as small and contains the least amount of information possible without sacrificing the quality of the information therein.  I don't want to fill in a bunch of generic fluff at all, and you can ask any questions you want.
+  Step 1)  Help incorporate the new information when it applies into either the backlog-abilities.md "Ability Statements" or the backlog-ilities.md (project cross cutting concerns, technical specifications, things true for most all of the backlog-abilities).   Take what I have started to outline and organize it and restate it all cleanly, expand where useful to finish thoughts, round out behaviors etc. hyper focused on these new changes.
+  Step 2) Now consider what you have written for its "wholeness" does it effectively describe well all of the important parts of this build?  
+  Step 3) Look at each ability statement that has been added or changed and see if they are all about the right size, all about the same size, each statement in the backlog-abilities.md should be about the same size in terms of delivery time as one another.  They should all be about 1-3 days on average to complete considering the fullness of what it means to get work all the way to completely done and delivered.  For some items that feel large,r work to break into multiple valuable pieces that can be prioritized individually and delivered independently.  Use the nesting of header tags to create a bit of categorical decomposition of useful pieces of abilities etc and all the things you were thinking about
+  Step 4) Any Area-Paths that contain more than 5 abilities are potential candidates for further area-path decomposition can you double check that there isn't some useful/needful further area-path decomposition to provide useful bucketing and categorization of the abilities
+  Step 5) Based on all the data and converastions so far, do a final pass in the document and fill out any details we have lost along the way, we used to have much more additional info before, lets not lose any of the important details we know of
+
+# Development Environment and Instructions
+- Always update the run.bat file with any new projects we are creating so they can all be run easily
+- Always continue making edits and testing your edits until you are satisfied, keep going, do more before returning
+- Don't make new files for improvements in ideas, just edit the actual code we are working on to keep from having messes and multiple ways to do the same things.
+- Break ideas apart in code so that the folder names, and file names, all help tell a good story and help keep the file sizes smaller.
+- if there isn't a .utilities/line_count.py file then create one and use it to find all source code files that are larger than 400 lines and if they are, try to think of ways to break things out into more services, classes etc. to keep file sizes down and encourage better story telling and single purpose designs
+- always clean up as you go, remove unused code, remove old ideas that we replaced with new ones, try to keep things clean and don't be afraid to ask questions if you are unsure but have ideas that help
+- always work to build on the internal todo list or task list mechanism and work to fully complete all of those tasks before stopping
+- when editting the run.bat always reference specific relative paths and do not use "CD" to change directory
+- always keep stop.bat file up to date with any new ports used by projects - update the PORTS variable when adding new projects
+
+---
+
+## AI Dev Bridge Integration
+
+This Cursor Rules file is part of a comprehensive **AI Dev Bridge** system that provides modular, plug-and-play development guidance. The system is organized into two main categories with detailed instruction files:
+
+### 📁 **StraightLine PMM System** (`.aidevbridge/straightline/`)
+- **[StraightLine LLM Instructions](.aidevbridge/straightline/_straightline-llm-instructions/straightline-llm.md)** - Complete guide for LLMs working with StraightLine backlogs, including artifact types, workflow processes, and best practices for backlog management.
+
+- **[StraightLine MCP Instructions](.aidevbridge/straightline/_straightline-llm-instructions/straightline-mcp.md)** - Comprehensive MCP (Model Context Protocol) server integration for structured backlog management, including query operations, tokenization rules, and advanced features.
+
+- **[Release Notes Driven Communications](.aidevbridge/straightline/release-notes-driven/release-notes-driven.md)** - Complete framework for using release notes as primary communication mechanism between delivery teams and business stakeholders, including templates, workflows, and quality standards.
+
+### 🚀 **Rapid Prototyping Collection** (`.aidevbridge/prompts/`)
+- **[Rapid Prototyping Prompt Collection](.aidevbridge/prompts/rapid-prototyping/standalone-rapid-prototyping-prompt.md)** - Comprehensive prompt collection for rapid prototyping projects, including language constraints, development practices, quality gates, and common patterns.
+
+- **[Prompt Collection LLM Instructions](.aidevbridge/prompts/_prompt-catalog-llm-instructions/prompt-collection-llm-instructions.md)** - Framework for creating and maintaining prompt collections for different development contexts, including rapid prototyping, production hardening, AI integration, and mobile adaptation.
+
+### 📚 **StraightLine PMM Mini Guide** (`.aidevbridge/straight-line-pmm-mini/`)
+- **[StraightLine PMM Index](.aidevbridge/straight-line-pmm-mini/0-straightline-pmm-index.md)** - Overview and file guide for StraightLine PMM system
+- **[Format Rules](.aidevbridge/straight-line-pmm-mini/1-straightline-format-rules.md)** - Strict syntax for headers, lists, details, comments, symbols
+- **[AI Rules](.aidevbridge/straight-line-pmm-mini/2-straightline-ai-rules.md)** - AI assistant operating rules
+- **[Abilities File Guide](.aidevbridge/straight-line-pmm-mini/3-straightline-abilities-file.md)** - Abilities backlog (business/inventory language)
+- **[Ilities File Guide](.aidevbridge/straight-line-pmm-mini/4-straightline-ilities-file.md)** - Ilities backlog (crosscutting technical constraints)
+- **[Best Practices](.aidevbridge/straight-line-pmm-mini/5-straightline-best-practices.md)** - Guidance for humans and AI
+- **[Examples](.aidevbridge/straight-line-pmm-mini/6-straightline-examples.md)** - Paired examples for both Abilities and Ilities
+
+### 🔧 **Rapid Prototyping Canary** (`.aidevbridge/rapid-prototyping-canary/`)
+- **[Quick Start Guide](.aidevbridge/rapid-prototyping-canary/QUICKSTART.md)** - Quick start guide for rapid prototyping
+- **[Index](.aidevbridge/rapid-prototyping-canary/0-INDEX.md)** - Index of rapid prototyping guides
+- **[Stack Rules](.aidevbridge/rapid-prototyping-canary/1-STACK-RULES.md)** - Technology stack rules and constraints
+- **[Layering and Naming](.aidevbridge/rapid-prototyping-canary/2-LAYERING-AND-NAMING.md)** - Project structure and naming conventions
+- **[Modules and Laziness](.aidevbridge/rapid-prototyping-canary/3-MODULES-AND-LAZINESS.md)** - Module organization principles
+- **[CQRS Spec Patterns](.aidevbridge/rapid-prototyping-canary/4-CQRS-SPEC-PATTERNS.md)** - Command Query Responsibility Segregation patterns
+- **[API ViewModels](.aidevbridge/rapid-prototyping-canary/5-API-VIEWMODELS.md)** - API design and view model patterns
+- **[Real-time SocketIO](.aidevbridge/rapid-prototyping-canary/6-REALTIME-SOCKETIO.md)** - Real-time communication patterns
+- **[Data Migrations Seed](.aidevbridge/rapid-prototyping-canary/7-DATA-MIGRATIONS-SEED.md)** - Database migration and seeding
+- **[Dev Workflow](.aidevbridge/rapid-prototyping-canary/8-DEV-WORKFLOW.md)** - Development workflow practices
+- **[LLM Operating Manual](.aidevbridge/rapid-prototyping-canary/9-LLM-OPERATING-MANUAL.md)** - LLM operating instructions
+- **[Templates and Tokens](.aidevbridge/rapid-prototyping-canary/10-TEMPLATES-AND-TOKENS.md)** - Code templates and tokenization
+- **[Checklists](.aidevbridge/rapid-prototyping-canary/11-CHECKLISTS.md)** - Development checklists
+
+### 📋 **Backlog File Management**
+- **Naming Convention**: Files must end with `-abilities.md` and `-ilities.md`
+- **Automatic Discovery**: System scans for files ending in `-abilities.md` and `-ilities.md` anywhere under `.aidevbridge/straightline/**`
+- **Flexible Organization**: Files can be organized in any folder structure under `.aidevbridge/straightline/`
+- **Multiple Projects**: Each project can have its own backlog files (e.g., `botbutler-abilities.md`, `project-name-ilities.md`)
+
+### 🎯 **How to Use This System**
+- **For Individual Projects**: Include this `.cursorrules` file in your project root
+- **For Team Development**: Add specific prompt collections and StraightLine files based on project needs
+- **For AI Dev Bridge Integration**: Enable/disable specific collections, mix and match methodologies, extend with new collections
+
+This modular approach ensures your development environment can be precisely tailored to your team's needs while maintaining flexibility to adapt as requirements change.
