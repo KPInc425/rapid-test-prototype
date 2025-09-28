@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Rapid Test Prototype</title>
+  <link rel="stylesheet" href="./styles.css">
+  <!-- Tailwind CSS CDN (class-based dark mode) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class' }
+  </script>
+  <!-- DaisyUI precompiled CSS (safe for CDN usage) -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.5/dist/full.css" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header bg-base-200 shadow-sm">
+    <div class="max-w-4xl mx-auto flex items-center justify-between p-4">
+      <h1 class="site-title text-lg font-semibold">Rapid Test Prototype</h1>
+      <nav class="site-nav" aria-label="Primary">
+        <button data-link="home" class="btn btn-ghost btn-sm" id="nav-home">Home</button>
+        <button data-link="blog" class="btn btn-ghost btn-sm" id="nav-blog">Blog</button>
+        <button data-link="test" class="btn btn-ghost btn-sm" id="nav-test">Self Test</button>
+        <button id="theme-toggle" class="btn btn-outline btn-sm" aria-pressed="false">Toggle Theme</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="app-root">
+    <section id="page-home" class="page max-w-4xl mx-auto p-4" role="region" aria-labelledby="home-title">
+      <h2 id="home-title" class="text-2xl font-bold mb-2">Big Text Display</h2>
+      <label for="big-text-input" class="sr-only">Enter text to display</label>
+      <input id="big-text-input" type="text" placeholder="Type something..." aria-describedby="text-controls" class="input input-bordered w-full mb-3" />
+
+      <div id="text-controls" class="controls">
+        <label class="mr-2">Color: <input id="text-color" type="color" value="#ff4d4d" class="ml-2"></label>
+        <label class="mr-2">Size: <input id="text-size" type="range" min="24" max="160" value="72" class="range range-sm ml-2"></label>
+        <button id="clear-text" class="btn btn-sm btn-outline ml-2">Clear</button>
+      </div>
+
+      <div id="big-text-display" class="big-text rounded-lg mt-4 bg-base-100 p-6 text-center" tabindex="0" aria-live="polite"></div>
+    </section>
+
+    <section id="page-blog" class="page hidden max-w-4xl mx-auto p-4" role="region" aria-labelledby="blog-title">
+      <h2 id="blog-title" class="text-2xl font-bold mb-2">Sample Blog</h2>
+      <article class="post mb-4 p-4 bg-base-100 rounded-lg">
+        <h3 id="post-title" class="text-lg font-semibold">The Joy of Prototyping</h3>
+        <time id="post-time" class="text-sm text-muted">2025-09-28</time>
+        <p id="post-body" class="mt-2">Small experiments let you learn fast. Try ideas, measure, and iterate.</p>
+      </article>
+
+      <section id="comments" aria-labelledby="comments-title">
+        <h3 id="comments-title" class="text-lg font-semibold mb-2">Comments</h3>
+        <ul id="comments-list" class="comments-list mb-3" aria-live="polite"></ul>
+        <form id="comment-form" class="space-y-2">
+          <label for="comment-input" class="sr-only">Add comment</label>
+          <textarea id="comment-input" rows="3" placeholder="Add an anonymous comment..." class="textarea textarea-bordered w-full"></textarea>
+          <div class="comment-actions flex gap-2">
+            <button type="submit" class="btn btn-primary btn-sm">Add Comment</button>
+            <button type="button" id="clear-comments" class="btn btn-ghost btn-sm">Clear Comments</button>
+          </div>
+        </form>
+      </section>
+    </section>
+
+    <section id="page-test" class="page hidden max-w-4xl mx-auto p-4" role="region" aria-labelledby="test-title">
+      <h2 id="test-title" class="text-2xl font-bold mb-2">Self Test Harness</h2>
+      <p class="mb-2">Use the buttons to exercise core flows.</p>
+      <div class="tests flex flex-col gap-2">
+        <button id="test-fill-text" class="btn btn-sm">Test: Fill Big Text</button>
+        <button id="test-add-comment" class="btn btn-sm">Test: Add Comment</button>
+        <pre id="test-log" class="test-log mt-2" aria-live="polite"></pre>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>Prototype — vanilla JS · localStorage persistence</small>
+  </footer>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
